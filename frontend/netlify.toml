@@ -1,0 +1,21 @@
+[build]
+  base    = "."
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Proxy: redireciona chamadas /api/* para o backend no Railway
+# Substitua a URL abaixo pelo seu domínio real do Railway
+[[redirects]]
+  from   = "/api/*"
+  to     = "https://SEU-DOMINIO.up.railway.app/api/:splat"
+  status = 200
+  force  = true
+
+# Redireciona todas as rotas do React Router para o index.html
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
