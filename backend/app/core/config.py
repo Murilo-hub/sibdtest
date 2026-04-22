@@ -17,12 +17,12 @@ class Settings(BaseSettings):
     )
 
     # ── App ───────────────────────────────────────────────────────
-    app_env: Literal["development", "production"] = "development"
-    app_debug: bool = True
-    app_secret_key: str = "changeme"
+    app_env: Literal["development", "production"] = "production"
+    app_debug: bool = False
+    app_secret_key: str = "27D8nf-*aLsB.s1p<cJsFqwEB%01~/W"
 
     # ── JWT ───────────────────────────────────────────────────────
-    jwt_secret_key: str = "changeme-jwt"
+    jwt_secret_key: str = "1A<D|BP5WdZz0q:3b*zm4uDJ%SHr44Cc"
     jwt_algorithm: str = "HS256"
     jwt_access_token_expire_minutes: int = 60
     jwt_refresh_token_expire_days: int = 7
@@ -35,7 +35,7 @@ class Settings(BaseSettings):
     postgres_password: str = "sibd_pass"
 
     # ── DATABASE_URL direto (Railway injeta automaticamente) ──────
-    database_url: str = ""
+    database_url: str = "postgresql://postgres:[YOUR-PASSWORD]@db.khnksougdptkfsgeowcl.supabase.co:5432/postgres"
 
     @property
     def async_database_url(self) -> str:
